@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang='en' class='dark'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Brew & Beans Coffee - Home</title>
+  <meta name='description' content='Dark-mode focused, bold typography, and sophisticated transitions. Experience premium coffee, artisanal pastries, and a modern full-stack cafe concept.'>
+  <script src='https://cdn.tailwindcss.com'></script>
+</head>
+<body class='bg-gray-900 text-gray-100'>
+  <!-- Header / Navigation -->
+  <header class='fixed w-full z-40 bg-gray-900/90 backdrop-blur-md'>
+    <nav class='container mx-auto flex items-center justify-between p-4'>
+      <a href='index.html' class='text-2xl md:text-3xl font-extrabold tracking-tight'>Brew & Beans</a>
+      <div class='hidden md:flex items-center gap-6'>
+        <a href='index.html' class='hover:text-gray-300'>Home</a>
+        <a href='menu.html' class='hover:text-gray-300'>Menu</a>
+        <a href='about.html' class='hover:text-gray-300'>About</a>
+        <a href='contact.html' class='hover:text-gray-300'>Contact</a>
+        <button id='theme-toggle' aria-label='Toggle dark mode' class='ml-2 p-2 rounded-full bg-gray-800 hover:bg-gray-700'>
+          <i class='fa-solid fa-moon'></i>
+        </button>
+      </div>
+      <button id='mobile-menu-button' class='md:hidden p-2 rounded bg-gray-800'>
+        <i class='fa-solid fa-bars'></i>
+      </button>
+    </nav>
+    <div id='mobile-menu' class='hidden md:hidden bg-gray-900/95'>
+      <a href='index.html' class='block px-4 py-2'>Home</a>
+      <a href='menu.html' class='block px-4 py-2'>Menu</a>
+      <a href='about.html' class='block px-4 py-2'>About</a>
+      <a href='contact.html' class='block px-4 py-2'>Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id='home' class='relative min-h-screen bg-cover bg-center bg-[url("https://images.unsplash.com/photo-1692073614869-c9f9dda1c40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw0fHxjb3p5JTIwY29mZmVlJTIwc2hvcCUyMGludGVyaW9yJTIwd2l0aCUyMGN1c3RvbWVycyUyMGFuZCUyMGJhcmlzdGF8ZW58MHwwfHx8MTc1OTQ5MDc0MHww&ixlib=rb-4.1.0&q=80&w=1080")]'>
+    <div class='absolute inset-0 bg-black/70'></div>
+    <div class='relative z-10 flex items-center justify-center min-h-screen'>
+      <div class='text-center max-w-3xl px-6'>
+        <h1 class='text-5xl md:text-6xl font-extrabold tracking-tight text-white'>Brew & Beans</h1>
+        <p class='mt-4 text-xl md:text-2xl text-gray-200'>Dark roasts. Bold flavors. Crafted with care.</p>
+        <a href='menu.html' class='inline-block mt-6 px-6 py-3 bg-yellow-500 text-black font-semibold rounded hover:bg-yellow-600 transition-all duration-300'>Explore Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights -->
+  <section class='py-16 bg-gray-900'>
+    <div class='container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8'>
+      <div class='text-center p-6 bg-gray-800 rounded-lg'>
+        <i class='fa-solid fa-mug-hot text-2xl mb-2'></i>
+        <h3 class='font-semibold text-xl'>Exceptional Coffee</h3>
+        <p class='text-gray-300'>Small-batch roasts from ethical farms.</p>
+      </div>
+      <div class='text-center p-6 bg-gray-800 rounded-lg'>
+        <i class='fa-solid fa-bread-slice text-2xl mb-2'></i>
+        <h3 class='font-semibold text-xl'>Fresh Pastries</h3>
+        <p class='text-gray-300'>Oven-warm pastries baked daily.</p>
+      </div>
+      <div class='text-center p-6 bg-gray-800 rounded-lg'>
+        <i class='fa-solid fa-wifi text-2xl mb-2'></i>
+        <h3 class='font-semibold text-xl'>Cozy Workspace</h3>
+        <p class='text-gray-300'>Fast Wi-Fi and ample power outlets.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class='bg-gray-900 text-gray-200'>
+    <div class='container mx-auto px-6 py-6 grid grid-cols-1 md:grid-cols-3 gap-6'>
+      <div>
+        <h4 class='font-semibold mb-2'>Brew & Beans</h4>
+        <p class='text-sm text-gray-400'>Dark-roasted passion in every cup. Est. 2015.</p>
+      </div>
+      <div>
+        <p class='text-sm text-gray-400'>Hours</p>
+        <p class='mb-1'>Mon-Thu 7:00 AM – 8:00 PM</p>
+        <p>Fri-Sun 7:00 AM – 10:00 PM</p>
+      </div>
+      <div>
+        <p class='text-sm text-gray-400'>Location</p>
+        <p>123 Bean Street, Flavor Town</p>
+      </div>
+    </div>
+    <div class='text-center py-3 text-sm text-gray-500'>© 2025 Brew & Beans. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileButton && mobileButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    // Dark mode toggle with persistence
+    const htmlEl = document.documentElement;
+    const toggleBtn = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      htmlEl.classList.add('dark');
+    } else if (saved === 'light') {
+      htmlEl.classList.remove('dark');
+    }
+    toggleBtn && toggleBtn.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js' integrity='sha512-6t6YFZqk0yZlPh92mwnd6bQ1n3kUQ0qL1QkL6Q7e3Q4w/6o1hFQ4eZ8QwV+6iB5p6i8q5l6f5bq6q8m6nQ7wA==' crossorigin='anonymous' referrerpolicy='no-referrer'></script>
+</body>
+</html>
