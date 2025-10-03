@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang='en' class='dark'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Brew & Beans Coffee - Menu</title>
+  <meta name='description' content='Bold, modern coffee menu with dark-mode focus. Explore espressos, lattes, teas, and pastries crafted for every mood.'>
+  <script src='https://cdn.tailwindcss.com'></script>
+</head>
+<body class='bg-gray-900 text-gray-100'>
+  <!-- Header -->
+  <header class='fixed w-full z-40 bg-gray-900/90 backdrop-blur-md'>
+    <nav class='container mx-auto flex items-center justify-between p-4'>
+      <a href='index.html' class='text-2xl md:text-3xl font-extrabold tracking-tight'>Brew & Beans</a>
+      <div class='hidden md:flex items-center gap-6'>
+        <a href='index.html' class='hover:text-gray-300'>Home</a>
+        <a href='menu.html' class='hover:text-gray-300'>Menu</a>
+        <a href='about.html' class='hover:text-gray-300'>About</a>
+        <a href='contact.html' class='hover:text-gray-300'>Contact</a>
+        <button id='theme-toggle' aria-label='Toggle dark mode' class='ml-2 p-2 rounded-full bg-gray-800 hover:bg-gray-700'>
+          <i class='fa-solid fa-moon'></i>
+        </button>
+      </div>
+      <button id='mobile-menu-button' class='md:hidden p-2 rounded bg-gray-800'>
+        <i class='fa-solid fa-bars'></i>
+      </button>
+    </nav>
+    <div id='mobile-menu' class='hidden md:hidden bg-gray-900/95'>
+      <a href='index.html' class='block px-4 py-2'>Home</a>
+      <a href='menu.html' class='block px-4 py-2'>Menu</a>
+      <a href='about.html' class='block px-4 py-2'>About</a>
+      <a href='contact.html' class='block px-4 py-2'>Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id='menu' class='relative min-h-screen bg-cover bg-center bg-[url("https://images.pexels.com/photos/7175956/pexels-photo-7175956.jpeg?auto=compress&cs=tinysrgb&h=650&w=940")]'>
+    <div class='absolute inset-0 bg-black/60'></div>
+    <div class='relative z-10 flex items-center justify-center min-h-screen'>
+      <div class='text-center max-w-3xl px-6'>
+        <h1 class='text-5xl md:text-6xl font-extrabold tracking-tight text-white'>Signature Menu</h1>
+        <p class='mt-4 text-xl md:text-2xl text-gray-200'>Espresso love, silky lattes, and bakery highlights to delight every palate.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Grid -->
+  <section class='py-12'>
+    <div class='container mx-auto px-6'>
+      <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
+        <!-- Card 1 -->
+        <div class='bg-gray-800 rounded-lg p-4 hover:shadow-xl transition-all'>
+          <img src='https://images.unsplash.com/photo-1712637007419-3bd6977f97ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw5fHxlc3ByZXNzbyUyMHNob3QlMjBvbiUyMGVzcHJlc3NvJTIwY3VwfGVufDB8MHx8fDE3NTk0OTA3NDN8MA&ixlib=rb-4.1.0&q=80&w=1080' alt='Espresso' class='w-full h-40 object-cover rounded mb-2'>
+          <h3 class='font-semibold'>Espresso</h3>
+          <p class='text-sm text-gray-300'>Double shot of rich, velvety espresso.</p>
+          <p class='mt-2 font-semibold'>$3.50</p>
+        </div>
+        <!-- Card 2 -->
+        <div class='bg-gray-800 rounded-lg p-4 hover:shadow-xl transition-all'>
+          <img src='https://images.unsplash.com/photo-1622843404078-a09315f46ae3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwxMHx8bGF0dGUlMjBhcnQlMjBjbG9zZXVwfGVufDB8MHx8fDE3NTk0OTA3NDR8MA&ixlib=rb-4.1.0&q=80&w=1080' alt='Caffe Latte' class='w-full h-40 object-cover rounded mb-2'>
+          <h3 class='font-semibold'>Caffè Latte</h3>
+          <p class='text-sm text-gray-300'>Silky milk with a balanced espresso.</p>
+          <p class='mt-2 font-semibold'>$4.25</p>
+        </div>
+        <!-- Card 3 -->
+        <div class='bg-gray-800 rounded-lg p-4 hover:shadow-xl transition-all'>
+          <img src='https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&h=650&w=940' alt='Cappuccino' class='w-full h-40 object-cover rounded mb-2'>
+          <h3 class='font-semibold'>Cappuccino</h3>
+          <p class='text-sm text-gray-300'>Espresso, steamed milk, and microfoam.</p>
+          <p class='mt-2 font-semibold'>$4.00</p>
+        </div>
+        <!-- Card 4 -->
+        <div class='bg-gray-800 rounded-lg p-4 hover:shadow-xl transition-all'>
+          <img src='https://pixabay.com/get/g5db3fa7d623facca36a6b39ac9c1296b71105e914c590cb8dc63520a8526fd33c339398cad2d305aca81edcc7cdb939cabbdab3a7d46a216ddbfd3d5e20b4efa_640.jpg' alt='Iced Coffee' class='w-full h-40 object-cover rounded mb-2'>
+          <h3 class='font-semibold'>Iced Coffee</h3>
+          <p class='text-sm text-gray-300'>Chilled brew with a refreshing finish.</p>
+          <p class='mt-2 font-semibold'>$3.95</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class='bg-gray-900 text-gray-200'>
+    <div class='container mx-auto px-6 py-6 grid grid-cols-1 md:grid-cols-3 gap-6'>
+      <div>
+        <h4 class='font-semibold mb-2'>Brew & Beans</h4>
+        <p class='text-sm text-gray-400'>Dark-roasted passion in every cup. Est. 2015.</p>
+      </div>
+      <div>
+        <p class='text-sm text-gray-400'>Hours</p>
+        <p class='mb-1'>Mon-Thu 7:00 AM – 8:00 PM</p>
+        <p>Fri-Sun 7:00 AM – 10:00 PM</p>
+      </div>
+      <div>
+        <p class='text-sm text-gray-400'>Location</p>
+        <p>123 Bean Street, Flavor Town</p>
+      </div>
+    </div>
+    <div class='text-center py-3 text-sm text-gray-500'>© 2025 Brew & Beans. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileButton && mobileButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+    // Dark mode toggle with persistence
+    const htmlEl = document.documentElement; const toggleBtn = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') { htmlEl.classList.add('dark'); } else if (saved === 'light') { htmlEl.classList.remove('dark'); }
+    toggleBtn && toggleBtn.addEventListener('click', () => { htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light'); });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js' integrity='sha512-6t6YFZqk0yZlPh92mwnd6bQ1n3kUQ0qL1QkL6Q7e3Q4w/6o1hFQ4eZ8QwV+6iB5p6i8q5l6f5bq6q8m6nQ7wA==' crossorigin='anonymous' referrerpolicy='no-referrer'></script>
+</body>
+</html>
