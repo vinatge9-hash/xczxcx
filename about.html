@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang='en' class='dark'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Brew & Beans Coffee - Our Story</title>
+  <meta name='description' content='Discover the story behind Brew & Beans. Dark-mode ambiance, bold typography, and a modern cafe culture built on community and quality.'>
+  <script src='https://cdn.tailwindcss.com'></script>
+</head>
+<body class='bg-gray-900 text-gray-100'>
+  <!-- Reuse header -->
+  <header class='fixed w-full z-40 bg-gray-900/90 backdrop-blur-md'>
+    <nav class='container mx-auto flex items-center justify-between p-4'>
+      <a href='index.html' class='text-2xl md:text-3xl font-extrabold tracking-tight'>Brew & Beans</a>
+      <div class='hidden md:flex items-center gap-6'>
+        <a href='index.html' class='hover:text-gray-300'>Home</a>
+        <a href='menu.html' class='hover:text-gray-300'>Menu</a>
+        <a href='about.html' class='hover:text-gray-300'>About</a>
+        <a href='contact.html' class='hover:text-gray-300'>Contact</a>
+        <button id='theme-toggle' aria-label='Toggle dark mode' class='ml-2 p-2 rounded-full bg-gray-800 hover:bg-gray-700'>
+          <i class='fa-solid fa-moon'></i>
+        </button>
+      </div>
+      <button id='mobile-menu-button' class='md:hidden p-2 rounded bg-gray-800'>
+        <i class='fa-solid fa-bars'></i>
+      </button>
+    </nav>
+    <div id='mobile-menu' class='hidden md:hidden bg-gray-900/95'>
+      <a href='index.html' class='block px-4 py-2'>Home</a>
+      <a href='menu.html' class='block px-4 py-2'>Menu</a>
+      <a href='about.html' class='block px-4 py-2'>About</a>
+      <a href='contact.html' class='block px-4 py-2'>Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id='about' class='relative min-h-screen bg-cover bg-center bg-[url("https://images.unsplash.com/photo-1651883623292-1508fe67687c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBjb2ZmZWUlMjBzaG9wJTIwaW50ZXJpb3IlMjB3aXRoJTIwYmFyaXN0YSUyMGFuZCUyMGN1c3RvbWVyc3xlbnwwfDB8fHwxNzU5NDkwNzQwfDA&ixlib=rb-4.1.0&q=80&w=1080")]'>
+    <div class='absolute inset-0 bg-black/60'></div>
+    <div class='relative z-10 flex items-center justify-center min-h-screen'>
+      <div class='text-center max-w-3xl px-6'>
+        <h1 class='text-5xl md:text-6xl font-extrabold tracking-tight text-white'>Our Story</h1>
+        <p class='mt-4 text-xl md:text-2xl text-gray-200'>From a small neighborhood cafe to a modern coffee culture hub, Brew & Beans shares a passion for quality, community, and craft.</p>
+        <a href='menu.html' class='inline-block mt-6 px-6 py-3 bg-yellow-500 text-black font-semibold rounded hover:bg-yellow-600 transition-all duration-300'>Meet the Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class='py-16'>
+    <div class='container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
+      <div class='order-2 md:order-1'>
+        <h2 class='text-3xl font-extrabold mb-3'>Crafted with care</h2>
+        <p class='text-gray-300'>Brew & Beans began as a small roastery turned cozy cafe. Our mission is to bring people together through exceptional coffee, locally sourced pastries, and a welcoming space that feels like home.</p>
+      </div>
+      <div class='order-1 md:order-2'>
+        <img src='https://images.pexels.com/photos/32946100/pexels-photo-32946100.jpeg?auto=compress&cs=tinysrgb&h=650&w=940' alt='Cozy Brew & Beans interior' class='w-full rounded-lg shadow-lg' />
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class='bg-gray-900 text-gray-200'>
+    <div class='container mx-auto px-6 py-6 grid grid-cols-1 md:grid-cols-3 gap-6'>
+      <div>
+        <h4 class='font-semibold mb-2'>Brew & Beans</h4>
+        <p class='text-sm text-gray-400'>Dark-roasted passion in every cup. Est. 2015.</p>
+      </div>
+      <div>
+        <p class='text-sm text-gray-400'>Hours</p>
+        <p class='mb-1'>Mon-Thu 7:00 AM – 8:00 PM</p>
+        <p>Fri-Sun 7:00 AM – 10:00 PM</p>
+      </div>
+      <div>
+        <p class='text-sm text-gray-400'>Location</p>
+        <p>123 Bean Street, Flavor Town</p>
+      </div>
+    </div>
+    <div class='text-center py-3 text-sm text-gray-500'>© 2025 Brew & Beans. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileButton && mobileButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+    // Dark mode toggle with persistence
+    const htmlEl = document.documentElement; const toggleBtn = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') { htmlEl.classList.add('dark'); } else if (saved === 'light') { htmlEl.classList.remove('dark'); }
+    toggleBtn && toggleBtn.addEventListener('click', () => { htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light'); });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js' integrity='sha512-6t6YFZqk0yZlPh92mwnd6bQ1n3kUQ0qL1QkL6Q7e3Q4w/6o1hFQ4eZ8QwV+6iB5p6i8q5l6f5bq6q8m6nQ7wA==' crossorigin='anonymous' referrerpolicy='no-referrer'></script>
+</body>
+</html>
